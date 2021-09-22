@@ -11,7 +11,7 @@
         const oneTimeBurst = prontoDataArr.shift();
         const repeatBurst = prontoDataArr.shift();
         const translatedBytes = prontoDataArr.map(byte=>Math.round(byte*1000/khzFrequency));
-        return 'IRSend ' + [khzFrequency].concat(translatedBytes).join(', ');
+        return 'IRSend ' + [khzFrequency].concat(translatedBytes).join(',');
     }
     function convertButtonHandler() {
         const input = document.getElementById('prontoData');
@@ -23,6 +23,6 @@
 <body>
   <input style="width: 100%" id="prontoData" placeholder="Your pronto data, e.g.: 0000 006D 000B 0000 00E6 0097 0027 0026 0027 0026 004C 0026 0027 0026 0027 0026 0050 0026 004C 0028 0027 0026 004C 0028 004A 06C3 "></input>
   <button onclick="convertButtonHandler()">Calc</button>
-  <input style="width: 100%" id="tasmotaCmd" placeholder="Your result, e.g.: IRSend 38, 6053, 3974, 1026, 1000, 1026, 1000, 1026, 1000, 974, 1053, 2053, 1000, 2053, 1053, 2000, 1000, 2000, 1053, 2000, 1053, 974, 45553"></input>
+  <input style="width: 100%" id="tasmotaCmd" placeholder="Your result, e.g.: IRSend 38,6053,3974,1026,1000,1026,1000,1026,1000,974,1053,2053,1000,2053,1053,2000,1000,2000,1053,2000,1053,974,45553"></input>
 <body>
 </html>
